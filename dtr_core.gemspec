@@ -2,15 +2,17 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'dtr_core'
-  spec.version       = '0.11.3'
+  spec.version       = '0.11.4'
   spec.authors = ['Rob Durst']
   spec.email         = ['me@robdurst.com']
   spec.summary       = 'Core smart contract intermediate language (Digicus Textual Representation) parser.'
   spec.description = <<~DESC
-    Ruby gem serving as the reference implementation for the parsing and consumption of [Digicus Textual Representation (DTR)](https://spaced-out-thoughts-dev-foundation.github.io/digicus/#digicus-textual-representation).We expect folks to leverage this gem when writing Digicus [compiler plugins](https://spaced-out-thoughts-dev-foundation.github.io/digicus/#a-compiler-plugin-framework). As an example of this, consider looking at:
+    Ruby gem serving as the reference implementation for the parsing and consumption of Digicus Textual Representation (DTR). We expect folks to leverage this gem when writing Digicus compiler plugins.
 
-    * [Soroban Rust Backend](https://github.com/spaced-out-thoughts-dev-foundation/soroban_rust_backend)
-    * [Digicus Web Backend](https://github.com/spaced-out-thoughts-dev-foundation/digicus_web_backend)
+    As an example of this, consider looking at:
+
+    * Soroban Rust Backend
+    * Digicus Web Backend]
 
   DESC
   spec.homepage      = 'https://spaced-out-thoughts-dev-foundation.github.io/digicus/'
