@@ -10,4 +10,4 @@ group :test do
   gem 'rubocop-rspec'
 end
 
-ruby '3.2.2'
+ruby '~> 3.2.2'
