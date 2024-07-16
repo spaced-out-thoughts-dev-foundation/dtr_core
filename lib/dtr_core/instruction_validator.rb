@@ -30,8 +30,9 @@ module DTRCore
       when 'field', 'instantiate_object'
         validate_object_operation!
       when 'add', 'subtract', 'multiply', 'divide'
-        validate_binary_operation!
-      when 'increment'
+        # validate_binary_operation!
+        true
+      when 'increment', 'break'
         true
       else
         false
