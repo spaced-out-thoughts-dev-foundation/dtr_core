@@ -32,7 +32,7 @@ module DTRCore
       when 'add', 'subtract', 'multiply', 'divide'
         # validate_binary_operation!
         true
-      when 'increment', 'break'
+      when 'increment', 'break', 'try_assign'
         true
       else
         false
