@@ -12,6 +12,7 @@ module DTRCore
   autoload :InstructionValidator, 'dtr_core/instruction_validator'
   autoload :Instruction, 'dtr_core/instruction'
   autoload :UserDefinedType, 'dtr_core/user_defined_type'
+  autoload :Common, 'dtr_core/common'
 
   # A graph is a collection of nodes and edges representing the structure of a DTR file.
   module Graph

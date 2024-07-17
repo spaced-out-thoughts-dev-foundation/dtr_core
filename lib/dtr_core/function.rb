@@ -96,7 +96,7 @@ module DTRCore
     def parse_function_instruction(instruction)
       instruction = DTRCore::Instruction.new(
         instruction[/instruction:\s*(?<all>[^\s,]+)/, 1],
-        parse_function_instruction_input(instruction),
+        DTRCore::Common.parse_instruction_input(instruction),
         instruction[/\s*assign:\s*\[?(?<all>[^\s\,\]]+)\]?/, 1],
         instruction[/\s*scope:\s*(?<all>[^\s\,]+)/, 1].to_i || 0,
         instruction[/\sid:\s*(?<all>[^\s,]+)/, 1].to_i || 0
@@ -105,43 +105,6 @@ module DTRCore
       raise "Invalid instruction: #{instruction}" unless instruction.valid?
 
       instruction
-    end
-
-    def parse_function_instruction_input(definition)
-      raw_inputs = definition[/\s*input:\s*\((?<all>[^\)]+)\)/, 1]
-      return nil if raw_inputs.nil?
-
-      cur_word = ''
-      inputs_to_return = []
-      in_string = false
-
-      raw_inputs.each_char do |char|
-        if in_string
-          if char == '"'
-            in_string = false
-            inputs_to_return.push("\"#{cur_word}\"")
-            cur_word = ''
-          else
-            cur_word += char
-          end
-        elsif cur_word.empty? && char == '"'
-          in_string = true
-        elsif char == ','
-          inputs_to_return.push(cur_word)
-          cur_word = ''
-          in_string = false
-        elsif char == ' ' && cur_word.empty?
-          next
-        else
-          cur_word += char
-        end
-      end
-
-      inputs_to_return.push(cur_word) unless cur_word.empty?
-
-      inputs_to_return.filter! { |x| !x.empty? }
-
-      inputs_to_return&.map(&:strip)
     end
   end
 end

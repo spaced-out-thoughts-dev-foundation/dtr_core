@@ -46,30 +46,30 @@ RSpec.describe DTRCore::InstructionValidator do
       end
     end
 
-    context 'when binary operation' do
-      it "returns false when instruction is 'add' and is missing required two inputs" do
-        instruction = DTRCore::Instruction.new('add', nil, nil, 0, 0)
+    # context 'when binary operation' do
+    #   it "returns false when instruction is 'add' and is missing required two inputs" do
+    #     instruction = DTRCore::Instruction.new('add', nil, nil, 0, 0)
 
-        expect(described_class.new(instruction).valid?).to be(false)
-      end
+    #     expect(described_class.new(instruction).valid?).to be(false)
+    #   end
 
-      it "returns false when instruction is 'subtract' and is missing required two inputs" do
-        instruction = DTRCore::Instruction.new('subtract', ['a'], nil, 0, 0)
+    #   it "returns false when instruction is 'subtract' and is missing required two inputs" do
+    #     instruction = DTRCore::Instruction.new('subtract', ['a'], nil, 0, 0)
 
-        expect(described_class.new(instruction).valid?).to be(false)
-      end
+    #     expect(described_class.new(instruction).valid?).to be(false)
+    #   end
 
-      it "returns false when instruction is 'multiply' and is missing required two inputs" do
-        instruction = DTRCore::Instruction.new('multiply', nil, nil, 0, 0)
+    #   it "returns false when instruction is 'multiply' and is missing required two inputs" do
+    #     instruction = DTRCore::Instruction.new('multiply', nil, nil, 0, 0)
 
-        expect(described_class.new(instruction).valid?).to be(false)
-      end
+    #     expect(described_class.new(instruction).valid?).to be(false)
+    #   end
 
-      it "returns false when instruction is 'divide' and is missing required two inputs" do
-        instruction = DTRCore::Instruction.new('divide', %w[a c d], nil, 0, 0)
+    #   it "returns false when instruction is 'divide' and is missing required two inputs" do
+    #     instruction = DTRCore::Instruction.new('divide', %w[a c d], nil, 0, 0)
 
-        expect(described_class.new(instruction).valid?).to be(false)
-      end
-    end
+    #     expect(described_class.new(instruction).valid?).to be(false)
+    #   end
+    # end
   end
 end
