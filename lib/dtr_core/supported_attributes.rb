@@ -64,7 +64,8 @@ module DTRCore
       { name: 'increment', description: 'set the first value to the .next() of the input value',
         category: INSTRUCTION_CATEGORY_UNARY },
       { name: 'unary', description: 'assign to ASSIGN_NAME result of unary operation on input value', category: INSTRUCTION_CATEGORY_UNARY },
-      { name: 'break', description: 'break out of loop', category: INSTRUCTION_CATEGORY_CONTROL_FLOW }
+      { name: 'break', description: 'break out of loop', category: INSTRUCTION_CATEGORY_CONTROL_FLOW },
+      { name: 'try_assign', description: 'assign the first input to the second input. The assign if the result of this assignment attempt.', category: INSTRUCTION_CATEGORY_LOGICAL }
     ].freeze
 
     # Supported Types for DTR.
