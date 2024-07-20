@@ -7,6 +7,7 @@ module DTRCore
     ## Instruction Categories ##
     INSTRUCTION_CATEGORY_BASIC = 'basic'
     INSTRUCTION_CATEGORY_BINARY = 'binary'
+    INSTRUCTION_CATEGORY_UNARY = 'unary'
     INSTRUCTION_CATEGORY_CONTROL_FLOW = 'control_flow'
     INSTRUCTION_CATEGORY_TERMINATING = 'terminating'
     INSTRUCTION_CATEGORY_LOGICAL = 'logical'
@@ -59,7 +60,11 @@ module DTRCore
       { name: 'multiply', description: 'assign to ASSIGN_NAME result of multiplying two value',
         category: INSTRUCTION_CATEGORY_BINARY },
       { name: 'divide', description: 'assign to ASSIGN_NAME result of dividing two value',
-        category: INSTRUCTION_CATEGORY_BINARY }
+        category: INSTRUCTION_CATEGORY_BINARY },
+      { name: 'increment', description: 'set the first value to the .next() of the input value',
+        category: INSTRUCTION_CATEGORY_UNARY },
+      { name: 'unary', description: 'assign to ASSIGN_NAME result of unary operation on input value', category: INSTRUCTION_CATEGORY_UNARY },
+      { name: 'break', description: 'break out of loop', category: INSTRUCTION_CATEGORY_CONTROL_FLOW }
     ].freeze
 
     # Supported Types for DTR.
